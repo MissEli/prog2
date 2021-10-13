@@ -6,10 +6,21 @@ class Integer{
 		Integer(int);
 		int get();
 		void set(int);
+		int fib();
 	private:
 		int val;
+		int fibn(int);
 	};
- 
+
+/*
+class Fibonacci{
+	public:
+		int fib();
+	private:
+		int fibn(int);
+	};
+ */
+
 Integer::Integer(int n){
 	val = n;
 	}
@@ -21,7 +32,19 @@ int Integer::get(){
 void Integer::set(int n){
 	val = n;
 	}
+int Integer::fib(){
+	int n = val;
+	return fibn(n);
+	} 
 
+int Integer::fibn(int n){
+	if (n<=1){
+		return n;
+		}
+	else{
+		return fibn(n-1)+fibn(n-2);
+		}
+	}
 
 extern "C"{
 	Integer* Integer_new(int n) {return new Integer(n);}
