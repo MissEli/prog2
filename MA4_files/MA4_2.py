@@ -1,12 +1,16 @@
 #!/usr/bin/env python3
-# hej
+
 from integer import Integer
+from time import perf_counter as pc
 
 def main():
-	f = Integer(5)
-	print(f.get())
-	f.set(7)
-	print(f.get())
+	start = pc()
+	n = 30
+	f = Integer(n)
+   	f.fib()
+   	print(f.get())
+    	end = pc()
+    	print(f"Process took {round(end-start,2)} seconds")
 
 if __name__ == '__main__':
 	main()
