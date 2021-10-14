@@ -23,6 +23,7 @@ int Integer::get(){
 void Integer::set(int n){
 	val = n;
 	}
+
 int Integer::fib(){
 	int n = val;
 	return fibn(n);
